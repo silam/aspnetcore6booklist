@@ -29,3 +29,10 @@
         <a asp-controller="Category" asp-action="Index" class="btn btn-primary" style="width:150px;">Back to List</a>
     </div>
 </form>
+
+@*validate on the client sides*@
+@section Scripts{
+    @{
+        <partial name="_ValidationScriptsPartial"></partial>
+    }
+}

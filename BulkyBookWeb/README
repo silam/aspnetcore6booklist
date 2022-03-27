@@ -7,6 +7,14 @@
     ModelState.AddModelError
 
 
+    Validate data on the client sides
+    @section Scripts{
+        @{
+            <partial name="_ValidationScriptsPartial"></partial>
+        }
+    }
+
+
 2 - Entity Framework Code First approach:
     Add-Migration
     Update-Migration
