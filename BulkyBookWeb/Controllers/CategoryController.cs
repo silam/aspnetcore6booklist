@@ -34,10 +34,19 @@ namespace BulkyBookWeb.Controllers
 
         public IActionResult Create(Category _category)
         {
-            _db.Categories.Add(_category);
-            _db.SaveChanges();
-            return RedirectToAction("Index");
-           
+            if ( _category.Name == _category.DisplayOrder.ToString())
+            {
+                //ModelState.AddModelError("CustomerError","DisplayOrder is not the same as Name");
+                ModelState.AddModelError("Name", "DisplayOrder is not the same as Name");
+
+            }
+            if (ModelState.IsValid)
+            {
+                _db.Categories.Add(_category);
+                _db.SaveChanges();
+                return RedirectToAction("Index");
+            }
+            return View(_category);
         }
     }
 }
