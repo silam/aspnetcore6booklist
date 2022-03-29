@@ -26,3 +26,6 @@
 5 - Bootstrap
     text-danger
     text-dark, text-primary
+
+6 - Notification Message
+    https://codeseven.github.io/toastr
